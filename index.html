@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="celebration-overlay" class="celebration-overlay hidden">
+        <canvas id="celebration-canvas"></canvas>
+        <div class="celebration-text">🎂 Happy Birthday! 🎂</div>
+    </div>
+    <div class="scene-forest" aria-hidden="true">
+        <div class="bokeh b1"></div>
+        <div class="bokeh b2"></div>
+        <div class="bokeh b3"></div>
+        <div class="bokeh b4"></div>
+    </div>
+
+    <div id="question-container" class="container fancy-card">
+        <h2 class="title">Enter the secret date</h2>
+        <p class="subtitle">Pick the correct date to unlock the surprise.</p>
+        <div class="date-selectors">
+            <select id="day-select">
+                <option value="">Day</option>
+                <!-- Days will be added by JavaScript -->
+            </select>
+            <select id="month-select">
+                <option value="">Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select id="year-select">
+                <option value="">Year</option>
+                <!-- Years will be added by JavaScript -->
+            </select>
+        </div>
+        <button class="primary-btn" onclick="checkAnswer()">Reveal the Magic ✨</button>
+        <p id="error-message" class="error"></p>
+    </div>
+
+
+
+    <div id="gift-card" class="container hidden with-photo">
+        <video id="bg-video" class="bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+        </video>
+        <canvas id="fireworks-canvas"></canvas>
+        <div class="floating-text">Happy Birthday! 🎉</div>
+        <div class="floating-elements"></div>
+        <div class="photo-lanes"></div>
+
+        <!-- Notification Trigger -->
+        <div id="message-notification" class="message-notification hidden" onclick="openLetterModal()">
+            <div class="notification-content">
+                <span class="notification-icon">📩</span>
+                <span class="notification-text">Someone has a message for you...</span>
+                <span class="notification-sub">Click to read</span>
+            </div>
+        </div>
+
+        <!-- Letter Modal -->
+        <div id="letter-modal" class="letter-modal hidden">
+            <div class="letter-content">
+                <button class="close-modal" onclick="closeLetterModal()">×</button>
+
+                <div class="letter-header">
+                    <div class="header-decoration">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h1>Happy Birthday!<br><span>A special wish just for you</span></h1>
+                </div>
+
+                <div class="letter-body">
+                    <p class="intro">
+                        <span class="quote-mark">❝</span>
+                        Wishing you the happiest of birthdays today! 🎉 May this special day bring you
+                        endless joy, laughter, and all the wonderful things you truly deserve.
+                        <span class="highlight">Here's to another amazing year ahead!</span> 🌏🎂
+                    </p>
+
+                    <p>
+                        You are an incredible person who brightens the lives of everyone around you.
+                        Thank you for being so wonderful and for all the happiness you bring into this world. 🌹
+                        Keep shining and never stop being your amazing self — the best is yet to come!
+                        <span class="italic-highlight">Every birthday is a chance to celebrate how far you've come
+                            and dream about where you're going.</span> 🚀🌟
+                    </p>
+
+                    <div class="nicknames-box">
+                        <p class="nicknames-title">Birthday wishes from the heart...</p>
+                        <div class="nicknames-grid">
+                            <span>Stay Happy 😊</span>
+                            <span>Stay Blessed 🙏</span>
+                            <span>Dream Big 💫</span>
+                            <span>Shine Bright ✨</span>
+                            <span>Keep Smiling 😄</span>
+                            <span>Be Amazing 🌟</span>
+                            <span>Live Fully 🎯</span>
+                            <span>Love Always ❤️</span>
+                        </div>
+                    </div>
+
+                    <p class="closing-message">
+                        May your birthday be as special as you are! <br>
+                        <span class="handwriting-highlight">Here's to a year full of love, growth, and beautiful memories.
+                            🎉🥳</span>
+                    </p>
+
+                    <div class="signature">
+                        <p class="from">With warm wishes</p>
+                        <p class="sign-off">Happiest Birthday! 🎂🎈🫶🏻</p>
+                        <p class="name">[Your Name Here]</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Background music (replace song.mp3 with your file) -->
+    <audio id="bg-audio" src="song.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
