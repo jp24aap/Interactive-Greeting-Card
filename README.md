@@ -3,7 +3,7 @@
 A dynamic, front-end web application designed as a customizable digital greeting card. It features a date-locked entry gate, multimedia integration, and complex CSS/Canvas animations.
 
 ## 🚀 Live Demo
-
+https://jp24aap.github.io/Interactive-Greeting-Card/
 
 ## 🔐 How to Test the Project
 To unlock the main experience and trigger the animations, enter the following placeholder date on the landing screen:
